@@ -38,10 +38,10 @@ GIT
 
 GIT
   remote: https://github.com/18f/identity-telephony.git
-  revision: 723162e7cd4fe69c3a112d218bf89f69c80849bc
-  tag: v0.4.2
+  revision: 15e9eb147900e959e130de1bf409ee1814e24ecc
+  tag: v0.4.4
   specs:
-    identity-telephony (0.4.2)
+    identity-telephony (0.4.4)
       aws-sdk-pinpoint
       aws-sdk-pinpointsmsvoice
       i18n
@@ -180,7 +180,7 @@ GEM
     blueprinter (0.25.3)
     bootsnap (1.9.1)
       msgpack (~> 1.0)
-    brakeman (5.1.1)
+    brakeman (5.1.2)
     browser (5.3.1)
     builder (3.2.4)
     bullet (6.1.5)
@@ -288,11 +288,6 @@ GEM
       ffi (~> 1.0)
     globalid (0.5.2)
       activesupport (>= 5.0)
-    gmail (0.7.1)
-      gmail_xoauth (>= 0.3.0)
-      mail (>= 2.2.1)
-    gmail_xoauth (0.4.2)
-      oauth (>= 0.3.6)
     good_job (2.2.0)
       activejob (>= 5.2.0)
       activerecord (>= 5.2.0)
@@ -386,7 +381,6 @@ GEM
     notiffany (0.1.3)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    oauth (0.5.6)
     octokit (4.19.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -719,7 +713,6 @@ DEPENDENCIES
   faker
   faraday
   foundation_emails
-  gmail (>= 0.7.1)
   good_job (~> 2.2.0)
   guard-rspec
   hashie (~> 4.1)
