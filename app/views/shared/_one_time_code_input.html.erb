@@ -31,8 +31,6 @@ classes << local_assigns.delete(:class) if local_assigns[:class]
   class: classes,
 ) %>
 
-<<<<<<< HEAD
-=======
 <%= text_field_tag(
   name,
   nil,
@@ -40,7 +38,6 @@ classes << local_assigns.delete(:class) if local_assigns[:class]
   class: 'hidden-input'
 ) %>
 
->>>>>>> origin/md-lg-4924-prevent-autofill-otp
 <span class='usa-error-message display-if-invalid display-if-invalid--value-missing margin-top-1' role='alert'>
   <%= t('simple_form.required.text') %>
 </span>
