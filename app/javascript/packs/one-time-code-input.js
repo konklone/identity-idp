@@ -1,12 +1,8 @@
 import OneTimeCodeInput from '@18f/identity-one-time-code-input';
+import { loadPolyfills } from '@18f/identity-polyfill';
 
-const fakeField = document.querySelector(".one-time-code-input");
-const input = document.querySelector(".hidden-input");
-if (input && fakeField) {
-  fakeField.addEventListener('input', () => {
-    input.value = fakeField.value;
-  });
-}
+const fakeField = /** @type {HTMLInputElement?} */ (document.querySelector('.one-time-code-input'));
+
 if (fakeField) {
-  new OneTimeCodeInput(/** @type {HTMLInputElement} */ (fakeField)).bind();
+  loadPolyfills(['custom-event']).then(() => new OneTimeCodeInput(fakeField).bind());
 }

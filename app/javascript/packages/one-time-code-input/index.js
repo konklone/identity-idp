@@ -12,9 +12,24 @@ class OneTimeCodeInput {
   }
 
   bind() {
+    this.createHiddenInput();
     if (OneTimeCodeInput.isWebOTPSupported && this.options.transport) {
       this.receive(this.options.transport);
     }
+  }
+
+  createHiddenInput() {
+    const { input } = this.elements;
+    const hiddenInput = /** @type {HTMLInputElement} */ (document.createElement('input'));
+    hiddenInput.name = input.name;
+    hiddenInput.value = input.value;
+    hiddenInput.type = 'hidden';
+    this.elements.hiddenInput = hiddenInput;
+    /** @type {HTMLElement} */ (input.parentNode).insertBefore(hiddenInput, input);
+    input.removeAttribute('name');
+    input.addEventListener('input', () => {
+      hiddenInput.value = input.value;
+    });
   }
 
   /**
