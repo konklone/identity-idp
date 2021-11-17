@@ -3,14 +3,14 @@ module Telephony
     SMS_MAX_LENGTH = 160
 
     def send_account_reset_notice(to:, country_code:)
-      message = I18n.t('telephony.account_reset_notice')
+      message = I18n.t('telephony.account_reset_notice', app_name: APP_NAME)
       response = adapter.send(message: message, to: to, country_code: country_code)
       log_response(response, context: __method__.to_s.gsub(/^send_/, ''))
       response
     end
 
     def send_account_reset_cancellation_notice(to:, country_code:)
-      message = I18n.t('telephony.account_reset_cancellation_notice')
+      message = I18n.t('telephony.account_reset_cancellation_notice', app_name: APP_NAME)
       response = adapter.send(message: message, to: to, country_code: country_code)
       log_response(response, context: __method__.to_s.gsub(/^send_/, ''))
       response
@@ -28,7 +28,7 @@ module Telephony
     end
 
     def send_personal_key_regeneration_notice(to:, country_code:)
-      message = I18n.t('telephony.personal_key_regeneration_notice')
+      message = I18n.t('telephony.personal_key_regeneration_notice', app_name: APP_NAME)
       response = adapter.send(message: message, to: to, country_code: country_code)
       log_response(response, context: __method__.to_s.gsub(/^send_/, ''))
       response
@@ -36,27 +36,6 @@ module Telephony
 
     def send_personal_key_sign_in_notice(to:, country_code:)
       message = I18n.t('telephony.personal_key_sign_in_notice')
-      response = adapter.send(message: message, to: to, country_code: country_code)
-      log_response(response, context: __method__.to_s.gsub(/^send_/, ''))
-      response
-    end
-
-    def send_join_keyword_response(to:, country_code:)
-      message = I18n.t('telephony.join_keyword_response')
-      response = adapter.send(message: message, to: to, country_code: country_code)
-      log_response(response, context: __method__.to_s.gsub(/^send_/, ''))
-      response
-    end
-
-    def send_stop_keyword_response(to:, country_code:)
-      message = I18n.t('telephony.stop_keyword_response')
-      response = adapter.send(message: message, to: to, country_code: country_code)
-      log_response(response, context: __method__.to_s.gsub(/^send_/, ''))
-      response
-    end
-
-    def send_help_keyword_response(to:, country_code:)
-      message = I18n.t('telephony.help_keyword_response')
       response = adapter.send(message: message, to: to, country_code: country_code)
       log_response(response, context: __method__.to_s.gsub(/^send_/, ''))
       response
