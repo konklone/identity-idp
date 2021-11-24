@@ -139,3 +139,12 @@ es:
         al menos dos para que la recuperación de la cuenta sea más fácil.
       login_text: Cuando esté listo para autenticarse, presione el botón
       nickname: Apodo clave de seguridad
+    webauthn_platform_setup:
+      continue: Continuar
+      instructions_text: Presione el botón en su dispositivo para registrarlo
+        con %{app_name}
+      instructions_title: Conecte su dispositivo
+      intro_html: Active la función de huella dactilar o el reconocimiento
+        facial de su dispositivo como método de autenticación de su cuenta.
+      login_text: Cuando esté listo para autenticarse, presione el botón
+      nickname: Apodo de dispositivo
