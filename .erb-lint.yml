@@ -102,7 +102,6 @@ linters:
       - '*/app/views/users/verify_password/new.html.erb'
       - '*/app/views/users/verify_personal_key/new.html.erb'
       - '*/app/views/users/webauthn_setup/delete.html.erb'
-      - '*/app/views/users/webauthn_setup/new.html.erb'
     rubocop_config:
       inherit_from:
         - .rubocop.yml

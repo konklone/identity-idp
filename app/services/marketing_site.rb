@@ -74,10 +74,6 @@ class MarketingSite
     ).to_s
   end
 
-  def self.help_hardware_security_key_url
-    URI.join(BASE_URL, locale_segment, 'help/signing-in/what-is-a-hardware-security-key/').to_s
-  end
-
   def self.help_document_capture_tips_url
     URI.join(
       BASE_URL,
