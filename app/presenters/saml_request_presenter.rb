@@ -41,7 +41,9 @@ class SamlRequestPresenter
   end
 
   def ialmax_authn_context?
-    authn_context.include? Saml::Idp::Constants::IALMAX_AUTHN_CONTEXT_CLASSREF
+    authn_context.include?(Saml::Idp::Constants::IALMAX_AUTHN_CONTEXT_CLASSREF) ||
+      (request.requested_authn_context_comparison == 'minimum' &&
+       authn_context.include?(Saml::Idp::Constants::IAL1_AUTHN_CONTEXT_CLASSREF))
   end
 
   def authn_context

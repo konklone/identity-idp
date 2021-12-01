@@ -68,8 +68,12 @@ class SamlIdpController < ApplicationController
   end
 
   def profile_or_identity_needs_verification_or_decryption?
-    return false unless ial2_requested?
+    return false unless ial2_requested? || ialmax_requested_with_ial2_user?
     profile_needs_verification? || identity_needs_verification? || identity_needs_decryption?
+  end
+
+  def ialmax_requested_with_ial2_user?
+    sp_session_ial.zero? && identity_needs_decryption?
   end
 
   def identity_needs_decryption?

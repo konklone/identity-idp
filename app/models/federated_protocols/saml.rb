@@ -9,6 +9,10 @@ module FederatedProtocols
     end
 
     def ial
+      if request.requested_authn_context_comparison == 'minimum'
+        return ::Saml::Idp::Constants::IALMAX_AUTHN_CONTEXT_CLASSREF
+      end
+
       request.requested_ial_authn_context || default_authn_context
     end
 
