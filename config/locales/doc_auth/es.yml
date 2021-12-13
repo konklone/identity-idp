@@ -129,6 +129,7 @@ es:
       upload_error: Lo siento, algo salió mal por nuestra parte.
     forms:
       address1: Dirección
+      captured_image: Imagen capturada
       change_file: Cambiar archivo
       choose_file_html: Arrastre el archivo aquí o <lg-underline>elija de la
         carpeta</lg-underline>
@@ -180,9 +181,6 @@ es:
       document_capture_intro_acknowledgment: Recopilaremos información sobre usted
         leyendo su identificación emitida por el estado. No almacenamos las
         imágenes que subes. Solo verificamos su identidad.
-      document_capture_upload_image: Solo utilizamos su ID para verificar su identidad
-        y no guardaremos ninguna imagen.
-      get_help_at_sp_html: '<strong>¿Tienes algún problema?</strong> Obtén ayuda en %{sp_name}'
       image_updated: Imagen actualizada
       interstitial_eta: Esto puede tardar hasta un minuto. Cargaremos el siguiente
         paso automáticamente cuando esté terminado.

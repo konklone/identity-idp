@@ -135,6 +135,7 @@ fr:
       upload_error: Désolé, quelque chose a mal tourné de notre côté.
     forms:
       address1: Adresse
+      captured_image: Image capturée
       change_file: Changer de fichier
       choose_file_html: Faites glisser le fichier ici ou <lg-underline>choisissez un
         dossier</lg-underline>
@@ -189,10 +190,6 @@ fr:
         vous en lisant votre pièce d’identité officielle. Nous ne stockons pas
         les images que vous téléchargez. Nous vérifions uniquement votre
         identité.
-      document_capture_upload_image: Nous n’utilisons votre identifiant que pour
-        vérifier votre identité, et nous n’enregistrerons aucune image.
-      get_help_at_sp_html: '<strong>Vous avez des problèmes?</strong> Obtenez de
-        l’aide à %{sp_name}'
       image_updated: Image mise à jour
       interstitial_eta: Cette opération peut prendre jusqu’à une minute. Nous
         chargerons automatiquement l’étape suivante lorsqu’elle sera terminée.

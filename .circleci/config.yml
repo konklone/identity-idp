@@ -97,7 +97,9 @@ commands:
       - run:
           name: Custom Checkout of Deployed SHA
           command: |
-            DEPLOYED_SHA=$(curl --silent << parameters.sha_url >> | jq -r '.git_sha')
+            SHA_RESPONSE=$(curl --silent << parameters.sha_url >>)
+            echo "Response: $SHA_RESPONSE"
+            DEPLOYED_SHA=$(echo ${SHA_RESPONSE} | jq -r '.git_sha')
 
             echo "URL: << parameters.sha_url >>"
             echo "SHA: $DEPLOYED_SHA"
@@ -165,6 +167,8 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
+            - tmp/cache/webpacker/last-compilation-digest-test
+            - tmp/cache/assets
             - public/assets
             - public/packs
             - public/packs-test
@@ -219,7 +223,7 @@ jobs:
             cp pwned_passwords/pwned_passwords.txt.sample pwned_passwords/pwned_passwords.txt
             bundle exec rake db:create db:migrate --trace
             bundle exec rake db:seed
-            ruby -i -pe 'gsub(/^(\s+)compile: true$/, "\\1compile: false")' config/webpacker.yml
+            ruby -i -pe 'gsub(/^  compile: true$/, "  compile: false")' config/webpacker.yml
       - attach_workspace:
           at: .
       - run:
