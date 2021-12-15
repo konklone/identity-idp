@@ -25,10 +25,10 @@ GIT
 
 GIT
   remote: https://github.com/18F/saml_idp.git
-  revision: 2180ccf2230c7d42046a5acaca52a0cf0b821f4f
-  tag: 0.15.0-18f
+  revision: ddcacdfe09507d607e3907b6fb407b5781da3612
+  branch: oyk-logout-metadata
   specs:
-    saml_idp (0.15.0.pre.18f)
+    saml_idp (0.16.0.pre.18f)
       activesupport
       builder
       faraday

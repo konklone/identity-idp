@@ -79,6 +79,9 @@ describe SamlEndpoint do
       expect(result.configurator.single_logout_service_post_location).to match(
         %r{api/saml/logout2021\Z},
       )
+      expect(result.configurator.remote_logout_service_post_location).to match(
+        %r{api/saml/remotelogout2021\Z},
+      )
     end
   end
 end
