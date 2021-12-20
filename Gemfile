@@ -131,7 +131,3 @@ group :test do
   gem 'webmock'
   gem 'zonebie'
 end
-
-group :production do
-  gem 'raise-if-root'
-end
