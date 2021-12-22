@@ -16,7 +16,6 @@ import Warning from './warning';
 import HelpCenterContext from '../context/help-center';
 import AnalyticsContext from '../context/analytics';
 import useDidUpdateEffect from '../hooks/use-did-update-effect';
-import './review-issues-step.scss';
 
 /** @typedef {import('@18f/identity-components/troubleshooting-options').TroubleshootingOption} TroubleshootingOption */
 
