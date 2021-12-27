@@ -236,6 +236,7 @@ artifact:
     - BUNDLE_DIR=vendor/ruby ./deploy/build
     - ./deploy/build-post-config
     - make build_artifact ARTIFACT_DIRECTORY=. ARTIFACT_DESTINATION_FILE='./tmp/idp.tar.gz'
+    - stat -c %s ./tmp/idp.tar.gz
 
 sync_from_github:
   image: mirror.gcr.io/alpine/git:latest
