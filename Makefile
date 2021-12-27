@@ -133,6 +133,8 @@ local_gems_run: local_gems_bundle
 	BUNDLE_GEMFILE=Gemfile-dev make run
 
 build_artifact:
+	bundle config set --local cache_all true
+	bundle package
 	tar --exclude './config/agencies.yml' --exclude './config/iaa_gtcs.yml' \
 		--exclude './config/iaa_orders.yml' --exclude './config/iaa_statuses.yml' \
 		--exclude './config/integration_statuses.yml' --exclude './config/integrations.yml' \
