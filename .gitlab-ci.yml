@@ -155,7 +155,9 @@ js_build:
   stage: test
   cache:
     - <<: *ruby_cache
+      policy: pull-push
     - <<: *yarn_production_cache
+      policy: pull-push
   script:
     - *bundle_install
     - *yarn_production_install
@@ -224,23 +226,16 @@ artifact:
   extends: .on_push
   stage: build
   cache:
-    policy: push
-    key:
-      files:
-        - Gemfile.lock
-        - yarn.lock
-    paths:
-      - ./tmp/idp.tar.gz
+    - <<: *ruby_cache
+    - <<: *yarn_production_cache
   variables:
     NODE_ENV: 'production'
     RAILS_ENV: 'production'
   script:
     - 'echo -e "production:\n  secret_key_base: 451c5d4990cacf95517a28d206970c1a1880d629e32b4d266877c39868bcaeef98bdae6b3f6f68f4f46399f3ac772af34e0ec7392d2de54accf6bde560ffdcbc" > config/application.yml'
-    - ./deploy/build
+    - BUNDLE_DIR=vendor/ruby ./deploy/build
     - ./deploy/build-post-config
-    - bundle config set --local cache_all true && bundle package
     - make build_artifact ARTIFACT_DIRECTORY=. ARTIFACT_DESTINATION_FILE='./tmp/idp.tar.gz'
-    - stat -c %s ./tmp/idp.tar.gz
 
 sync_from_github:
   image: mirror.gcr.io/alpine/git:latest
