@@ -234,7 +234,7 @@ artifact:
         - yarn.lock
       paths:
         - tmp/idp.tar.gz
-    policy: push
+      policy: push
   variables:
     NODE_ENV: 'production'
     RAILS_ENV: 'production'
