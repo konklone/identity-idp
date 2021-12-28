@@ -226,15 +226,16 @@ artifact:
   extends: .on_push
   stage: build
   cache:
+    -
+      policy: push
+      key:
+        files:
+          - Gemfile.lock
+          - yarn.lock
+      paths:
+        - ./tmp/idp.tar.gz
     - <<: *ruby_cache
     - <<: *yarn_production_cache
-    - key:
-      files:
-        - Gemfile.lock
-        - yarn.lock
-      paths:
-        - tmp/idp.tar.gz
-      policy: push
   variables:
     NODE_ENV: 'production'
     RAILS_ENV: 'production'
