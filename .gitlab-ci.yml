@@ -228,12 +228,12 @@ artifact:
   cache:
     - <<: *ruby_cache
     - <<: *yarn_production_cache
-    key:
+    - key:
       files:
         - Gemfile.lock
         - yarn.lock
-    paths:
-      - tmp/idp.tar.gz
+      paths:
+        - tmp/idp.tar.gz
     policy: push
   variables:
     NODE_ENV: 'production'
