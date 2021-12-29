@@ -3,10 +3,10 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
 ruby '~> 3.0.3'
 
-gem 'rails', '~> 6.1.4'
+gem 'rails', '~> 7.0.0'
 
 # Variables can be overridden for local dev in Gemfile-dev
-@hostdata_gem ||= { github: '18F/identity-hostdata', tag: 'v3.4.0' }
+@hostdata_gem ||= { github: '18F/identity-hostdata', branch: 'mitchellhenke/rails-7' }
 @logging_gem ||= { github: '18F/identity-logging', tag: 'v0.1.0' }
 @saml_gem ||= { github: '18F/saml_idp', tag: '0.15.0-18f' }
 @validations_gem ||= { github: '18F/identity-validations', tag: 'v0.7.1' }
@@ -15,6 +15,8 @@ gem 'identity-hostdata', @hostdata_gem
 gem 'identity-logging', @logging_gem
 gem 'identity_validations', @validations_gem
 gem 'saml_idp', @saml_gem
+gem 'sprockets', github: 'rails/sprockets'
+gem 'sprockets-rails'
 
 gem 'ahoy_matey', '~> 3.0'
 gem 'autoprefixer-rails', '~> 10.0'
@@ -54,7 +56,7 @@ gem 'rack-timeout', require: false
 gem 'redacted_struct'
 gem 'redis', '>= 3.2.0'
 gem 'redis-namespace'
-gem 'redis-session-store', github: '18f/redis-session-store', tag: 'v0.11.4-18f'
+gem 'redis-session-store', github: '18f/redis-session-store', branch: 'mitchellhenke/rails-7'
 gem 'retries'
 gem 'rotp', '~> 6.1'
 gem 'rqrcode'
@@ -94,7 +96,7 @@ end
 group :development, :test do
   gem 'aws-sdk-cloudwatchlogs', require: false
   gem 'brakeman', require: false
-  gem 'bullet', '>= 6.0.2'
+  gem 'bullet', '~> 7.0'
   gem 'erb_lint', '~> 0.1.0', require: false
   gem 'i18n-tasks', '>= 0.9.31'
   gem 'knapsack'
